@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_sample/LoadFullImage.dart';
+import 'package:flutter_sample/ui_ravi/LoadFullImage.dart';
 import 'package:flutter_sample/models/ImageData.dart';
 
 class ImagerSliderHeroAnim extends StatefulWidget {
@@ -63,16 +63,24 @@ class _ImagerSliderHeroAnimState extends State<ImagerSliderHeroAnim> {
   Widget carouselCard(ImageData data) {
     return Column(
       children: <Widget>[
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.white,
-                image: DecorationImage(
-                  image: AssetImage(data.path),
-                  fit: BoxFit.fill)
+        Expanded(   // without expanded image is not loading
+          child: Hero(
+            tag: data.path,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoadFullImage(imagePath: data.path,)));
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                    image: DecorationImage(
+                      image: AssetImage(data.path),
+                      fit: BoxFit.fill)
+                  ),
+                ),
               ),
             ),
           ),

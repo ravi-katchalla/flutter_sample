@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/ImageSliderHeroAnim.dart';
-import 'package:flutter_sample/SecondScreen.dart';
+import 'package:flutter_sample/ui_ravi/AnimatedContainerEx.dart';
+import 'package:flutter_sample/ui_ravi/AnimatedIconsEx.dart';
+import 'package:flutter_sample/ui_ravi/AnimationControllerEx.dart';
+import 'package:flutter_sample/ui_ravi/BottomNavigationBar.dart';
+import 'package:flutter_sample/ui_ravi/BottomNavyBarEx.dart';
+import 'package:flutter_sample/ui_ravi/BouncingWidgetExample.dart';
+import 'package:flutter_sample/ui_ravi/ImageSliderHeroAnim.dart';
+import 'package:flutter_sample/ui_ravi/SecondScreen.dart';
+import 'package:flutter_sample/ui_ravi/SequenceAnimationEx.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,16 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 20,),
             MaterialButton(
               onPressed: () {
-              //  Navigator.pushNamed(context, '/second');
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ImagerSliderHeroAnim()));
-             // with transition animation
-            // Navigator.of(context).push(_createRouteSlideRight());
+             Navigator.of(context).push(_createRouteSlideRight());
               },
               color: Colors.white,
               shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5)
                   ),
-              child: const Text('Next', style: TextStyle(color: Colors.blue, fontSize: 16),),
+              child: const Text('Slide Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
             ),
             const SizedBox(height: 20,),
             MaterialButton(
@@ -115,8 +119,99 @@ class _MyHomePageState extends State<MyHomePage> {
               shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5)
                   ),
-              child: const Text('Scale and Rotation', style: TextStyle(color: Colors.blue, fontSize: 16),),
+              child: const Text('Scale and Rotation Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
             ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CustomBottomNavigationBar()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Bottom Navigation1', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BottomNavyBarExample()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Bottom Navigation inbuilt', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BouncingWidgetExample()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Bowuncing Widget', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+              //  Navigator.pushNamed(context, '/second');
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ImagerSliderHeroAnim()));
+             // with transition animation
+            // Navigator.of(context).push(_createRouteSlideRight());
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('ImagerSliderHeroAnim', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AnimatedContainerEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Animation1', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AnimationControllerEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Animation2', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SequenceAnimationEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Animation3', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AnimatedIconsEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Animated Icons', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            )
           ],
         ),
       ),
