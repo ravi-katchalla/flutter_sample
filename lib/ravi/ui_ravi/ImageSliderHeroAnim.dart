@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_sample/ui_ravi/LoadFullImage.dart';
-import 'package:flutter_sample/models/ImageData.dart';
+import 'package:flutter_sample/ravi/ui_ravi/LoadFullImage.dart';
+import 'package:flutter_sample/ravi/models/ImageData.dart';
 
 class ImagerSliderHeroAnim extends StatefulWidget {
   const ImagerSliderHeroAnim({super.key});
