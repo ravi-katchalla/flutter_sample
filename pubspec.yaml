@@ -44,6 +44,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   bottom_navy_bar: ^6.0.0
   bouncing_widget: ^2.0.0
+  flutter_bloc: ^8.1.1
+  connectivity_plus: ^2.3.9
 
 dev_dependencies:
   flutter_test:
