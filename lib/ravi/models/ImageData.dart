@@ -5,8 +5,8 @@ class ImageData {
 }
 
 List<ImageData> dataList = [
-  ImageData("Cartoon1", "assets/images/cartoon1.jpg"),
-  ImageData("Cartoon2", "assets/images/cartoon2.jpg"),
-  ImageData("Cartoon3", "assets/images/cartoon3.jpg"),
-  ImageData("Cartoon4", "assets/images/cartoon4.jpg"),
+  ImageData("Red Ranger", "assets/images/cartoon1.jpg"),
+  ImageData("White Ranger ", "assets/images/cartoon2.jpg"),
+  ImageData("Music Ranger", "assets/images/cartoon3.jpg"),
+  ImageData("Star Kid", "assets/images/cartoon4.jpg"),
   ];

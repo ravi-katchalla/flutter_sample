@@ -85,7 +85,7 @@ class _ImagerSliderHeroAnimState extends State<ImagerSliderHeroAnim> {
             ),
           ),
         ),
-        Text("\$${data.title}", 
+        Text("${data.title}", 
           style : const TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),)
       ],
     );
