@@ -5,6 +5,6 @@ import 'package:flutter_sample/vivek_official/news_project/main/my_app.dart';
 import 'package:flutter_sample/ravi/todoApp/MyTodoApp.dart';
 
 void main() {
-  runApp(MyApp2());
- // runApp(MyAppStart());
+  //runApp(MyApp2());
+  runApp(MyAppStart());
 }
