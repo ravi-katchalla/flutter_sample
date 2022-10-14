@@ -1,3 +1,4 @@
+import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,13 +13,16 @@ class AnimatedIconsEx extends StatefulWidget {
 
 class _AnimatedIconsExState extends State<AnimatedIconsEx> with SingleTickerProviderStateMixin {
   bool isOpen = false;
+  bool isIconClick = false;
   late AnimationController _controller;
+  late AnimateIconController _controller2;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _controller= AnimationController(vsync : this, duration: Duration(milliseconds: 300));
+    _controller2 = AnimateIconController();
   }
 
 
@@ -32,8 +36,16 @@ class _AnimatedIconsExState extends State<AnimatedIconsEx> with SingleTickerProv
     setState(() {
       isOpen = !isOpen;
       isOpen ? _controller.forward() : _controller.reverse();
+
     });
-    
+  }
+
+  void _toggleIcon() {
+      setState(() {
+      isIconClick = !isIconClick;
+      isIconClick ? _controller2.animateToStart() : _controller2.animateToEnd();
+
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -47,7 +59,7 @@ class _AnimatedIconsExState extends State<AnimatedIconsEx> with SingleTickerProv
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Stack(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.bottomLeft,
                 children: <Widget>[
                   SizedBox(height: 300,),
                   Padding(
@@ -225,10 +237,31 @@ class _AnimatedIconsExState extends State<AnimatedIconsEx> with SingleTickerProv
                   ),
                   SizedBox(height: 35,),
                   ]), ),
-                
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: Container(
+                    child: AnimateIcons(
+                        startIcon: Icons.add,
+                        endIcon: Icons.close,
+                        size: 60.0,
+                        controller: _controller2,
+                        onStartIconPress: () {
+                            print("Clicked on Add Icon");
+                            return true;
+                        },
+                        onEndIconPress: () {
+                            print("Clicked on Close Icon");
+                            return true;
+                        },
+                        duration: const Duration(milliseconds: 500),
+                        clockwise: false,
+                    ),
+                  ),
+                )
                   
-                ],
+              ],
               ),
+              
             ],
           ),
         ),),

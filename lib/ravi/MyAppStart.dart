@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/ravi/githubEx/LoginPage.dart';
+import 'package:flutter_sample/ravi/todoApp/MyTodoApp.dart';
+import 'package:flutter_sample/ravi/todoApp/todoHome.dart';
 import 'package:flutter_sample/ravi/ui_ravi/AnimatedContainerEx.dart';
 import 'package:flutter_sample/ravi/ui_ravi/AnimatedIconsEx.dart';
 import 'package:flutter_sample/ravi/ui_ravi/AnimationControllerEx.dart';
 import 'package:flutter_sample/ravi/ui_ravi/BottomNavigationBar.dart';
 import 'package:flutter_sample/ravi/ui_ravi/BottomNavyBarEx.dart';
 import 'package:flutter_sample/ravi/ui_ravi/BouncingWidgetExample.dart';
+import 'package:flutter_sample/ravi/ui_ravi/GoogleMapsEx.dart';
+import 'package:flutter_sample/ravi/ui_ravi/HttpGetEx.dart';
 import 'package:flutter_sample/ravi/ui_ravi/ImageSliderHeroAnim.dart';
 import 'package:flutter_sample/ravi/ui_ravi/SecondScreen.dart';
 import 'package:flutter_sample/ravi/ui_ravi/SequenceAnimationEx.dart';
+import 'package:flutter_sample/ravi/ui_ravi/githubUsersFetch.dart';
+import 'package:flutter_sample/ravi/ui_ravi/swipeUp_example.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_sample/ravi/githubEx/data_provider.dart';
+
 
 class MyAppStart extends StatelessWidget {
   const MyAppStart({super.key});
@@ -15,7 +25,9 @@ class MyAppStart extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => UserProvider(),
+      child: MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -25,6 +37,7 @@ class MyAppStart extends StatelessWidget {
       routes: {
         '/second' :(context) => const SecondScreen()
       },
+    ),
     );
   }
 }
@@ -95,28 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               )
             ),
-            const SizedBox(height: 20,),
-            MaterialButton(
-              onPressed: () {
-             Navigator.of(context).push(_createRouteSlideRight());
-              },
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  ),
-              child: const Text('Slide Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
-            ),
-            const SizedBox(height: 20,),
-            MaterialButton(
-              onPressed: () {
-             Navigator.of(context).push(_scaleAndRotation());
-              },
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  ),
-              child: const Text('Scale and Rotation Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
-            ),
+            
             const SizedBox(height: 20,),
             MaterialButton(
               onPressed: () {
@@ -138,6 +130,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(5)
                   ),
               child: const Text('Bottom Navigation inbuilt', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(_createRouteSlideRight());
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Slide Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(_scaleAndRotation());
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Scale and Rotation Transition', style: TextStyle(color: Colors.blue, fontSize: 16),),
             ),
             const SizedBox(height: 20,),
             MaterialButton(
@@ -207,6 +221,50 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(5)
                   ),
               child: const Text('Animated Icons', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SwipeUpEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Swipe Up', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+             const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HttpGetEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Api Basic', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoogleMapsEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Api Basic2', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => TodoApp()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Api Example', style: TextStyle(color: Colors.blue, fontSize: 16),),
             )
           ],
         ),
