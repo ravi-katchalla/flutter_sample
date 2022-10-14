@@ -37,53 +37,56 @@ class _AnimatedContainerExState extends State<AnimatedContainerEx> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 40,),
-            ElevatedButton(
-              onPressed: () {
-                _addAnimation();
-              }, 
-              child: const Text('start Animation'),
-            ),
-      
-            Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 400),
-                height: _width,
-                width: _height,
-                curve: Curves.easeInOutBack,
-                color: Colors.lightBlue[200],
-                child: Center(
-                  child: Text(
-                    'Animation', style:Theme.of(context).textTheme.headline5
-                  )),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 40,),
+              ElevatedButton(
+                onPressed: () {
+                  _addAnimation();
+                }, 
+                child: const Text('start Animation'),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: TweenAnimationBuilder(  // wrap container with tween animation builder
-                tween: tween,
-                duration: Duration(milliseconds: 600), // delay transition duration
-                builder: (context, value, child) => Transform.scale(scale: value, child: child,),
-                child: Container(
-                  height: 200,
-                width: 200,
-                color: Colors.lightBlue[200],
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(40.0),
+      
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 400),
+                  height: _width,
+                  width: _height,
+                  curve: Curves.easeInOutBack,
+                  color: Colors.lightBlue[200],
+                  child: Center(
                     child: Text(
-                      'Tween Animation', style:Theme.of(context).textTheme.headline5
-                    ),
-                  ))
+                      'Animation', style:Theme.of(context).textTheme.headline5
+                    )),
                 ),
               ),
-            )
-          ],
-          
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: TweenAnimationBuilder(  // wrap container with tween animation builder
+                  tween: tween,
+                  duration: Duration(milliseconds: 600), // delay transition duration
+                  builder: (context, value, child) => Transform.scale(scale: value, child: child,),
+                  child: Container(
+                    height: 200,
+                  width: 200,
+                  color: Colors.lightBlue[200],
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Text(
+                        'Tween Animation', style:Theme.of(context).textTheme.headline5
+                      ),
+                    ))
+                  ),
+                ),
+              )
+            ],
+            
+          ),
         ),
       ),
     );
