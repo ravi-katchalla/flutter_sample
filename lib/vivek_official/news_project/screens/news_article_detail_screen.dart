@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/vivek_official/news_project/models/news_article.dart';
 
-import '../viewmodels/news_article_view_model.dart';
+// import '../viewmodels/news_article_view_model.dart';
 import '../widgets/circle_image.dart';
 
 class NewsArticleDetailScreen extends StatelessWidget {
-  final NewsArticleViewModel article;
+  final NewsArticle article;
 
   const NewsArticleDetailScreen({required this.article});
 
@@ -36,7 +37,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    article.author,
+                    article.author ?? '',
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -74,7 +75,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  article.title,
+                  article.title ?? '',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -85,7 +86,7 @@ class NewsArticleDetailScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  article.publishedAt,
+                  article.publishedAt ?? '',
                   style: const TextStyle(
                     fontSize: 16,
                     color: Colors.grey,
@@ -97,14 +98,14 @@ class NewsArticleDetailScreen extends StatelessWidget {
                 SizedBox(
                   height: 200,
                   child: CircleImage(
-                    imageUrl: article.imageUrl,
+                    imageUrl: article.urlToImage ?? '',
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 Text(
-                  article.description,
+                  article.description ?? '',
                   style: const TextStyle(
                     fontSize: 16,
                     wordSpacing: 3,
