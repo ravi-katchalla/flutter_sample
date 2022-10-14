@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/ravi/githubEx/LoginPage.dart';
+import 'package:flutter_sample/ravi/service/workmanagerEx.dart';
 import 'package:flutter_sample/ravi/todoApp/MyTodoApp.dart';
 import 'package:flutter_sample/ravi/todoApp/todoHome.dart';
 import 'package:flutter_sample/ravi/ui_ravi/AnimatedContainerEx.dart';
@@ -134,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 20,),
             MaterialButton(
               onPressed: () {
-             Navigator.of(context).push(_createRouteSlideRight());
+                Navigator.of(context).push(_createRouteSlideRight());
               },
               color: Colors.white,
               shape: RoundedRectangleBorder(
@@ -265,6 +266,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(5)
                   ),
               child: const Text('Api Example', style: TextStyle(color: Colors.blue, fontSize: 16),),
+            ),
+            const SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => WorkManagerEx()));
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+              child: const Text('Service Example', style: TextStyle(color: Colors.blue, fontSize: 16),),
             )
           ],
         ),
@@ -282,14 +294,15 @@ Route _createRouteSlideRight() {
   return PageRouteBuilder(
     pageBuilder: ((context, animation, secondaryAnimation) => const SecondScreen()),
     transitionsBuilder: ((context, animation, secondaryAnimation, child) {
-      const begin = Offset(-1.0, 0.0);
-      const end = Offset.zero; // Offset(0.0, 0.0)
+      const begin = Offset(-1.0, 0.0);// (-1,0)
+      const end = Offset(2.0, 0.0); // Offset(0.0, 0.0) (0,0)
       const curve = Curves.ease;
       final tween = Tween(begin: begin, end: end);
       
       final screeenAnimation = animation.drive(tween);
       return SlideTransition(
-        position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero).animate(animation),
+        position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset(0, 0)).animate(animation),
+      //   position: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
         child: child,);
     })
   );
