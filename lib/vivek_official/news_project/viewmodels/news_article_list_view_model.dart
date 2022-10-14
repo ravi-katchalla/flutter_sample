@@ -62,6 +62,7 @@ class NewsArticleListViewModel with ChangeNotifier {
 
   void topHeadlines() async {
     _apiResponse = ApiResponse.loading('Fetching Latest News..');
+    await Future.delayed(Duration(seconds: 10));
     // notifyListeners();
     try {
       List<NewsArticle> newsArticles =

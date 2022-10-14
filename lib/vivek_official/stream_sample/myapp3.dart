@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_sample/vivek_official/chat_sample_app/chat_screen.dart';
+import 'package:flutter_sample/vivek_official/stream_sample/stream_api.dart';
 
 class MyApp3 extends StatelessWidget {
   const MyApp3({super.key});
@@ -14,7 +14,7 @@ class MyApp3 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyWidget(),
+      home: ChatScreen(),
     );
   }
 }
@@ -341,7 +341,7 @@ class _MyWidgetState extends State<MyWidget> {
 
   @override
   void dispose() {
-    _streamController?.close();
+    _streamController.close();
     super.dispose();
   }
 }

@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sample/vivek_official/news_project/internet_connectivity/cubit/internet_cubit.dart';
 // import 'package:flutter_sample/vivek_official/news_project/internet_connectivity/internet_state.dart';
 import 'package:flutter_sample/vivek_official/news_project/models/news_article.dart';
+import 'package:flutter_sample/vivek_official/news_project/screens/news_article_detail_screen.dart';
 import 'package:flutter_sample/vivek_official/news_project/services/api_response.dart';
+import 'package:flutter_sample/vivek_official/screens/otp_verification_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../utils/constants.dart';
