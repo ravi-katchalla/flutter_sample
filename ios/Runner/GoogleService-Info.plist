@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>932078272793-api6trv2j7jhnkqsmffedl0fqlfolcqt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.932078272793-api6trv2j7jhnkqsmffedl0fqlfolcqt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAqTPVSJXS19JjI3jFzvNbpt9pI7qhCfwE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>932078272793</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterSample</string>
+	<key>PROJECT_ID</key>
+	<string>zadinga-fl</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zadinga-fl.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:932078272793:ios:2de5471c81ba4709d60588</string>
+</dict>
+</plist>
